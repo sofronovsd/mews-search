@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 const MovieItem: React.FC<IMovie> = (movie) => {
     return (
-        <Link to={`/movie/details/${movie.id}`} target="_blank">
+        <Link to={`/movie/details/${movie.id}`}>
             <MovieRow>
                     <img className="poster" src={`https://image.tmdb.org/t/p/w94_and_h141_bestv2/${movie.poster_path}`} alt="poster" />
                     <div style={{padding: "0 1rem"}}>
