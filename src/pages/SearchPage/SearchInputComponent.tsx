@@ -9,21 +9,23 @@ interface ISearchInput {
 
 const SearchInputComponent: React.FC<ISearchInput> = ({setSearchString}) => {
     const [value, setValue] = useState('');
+    const [searchTimeout, setSearchTimeout] = useState(0);
 
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         setValue(event.target.value);
-    };
-
-    const onKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === 'Enter' ) {
-            setSearchString(value);
+        if (searchTimeout) {
+            clearTimeout(searchTimeout);
         }
+        const timeoutId = window.setTimeout(() => {
+            setSearchString(value);
+        }, 1000);
+        setSearchTimeout(timeoutId);
     };
 
     return (
         <SearchWrapper>
             <SearchIcon />
-            <SearchInput onKeyPress={onKeyPress} onChange={onChange} value={value} placeholder="Search..."/>
+            <SearchInput onChange={onChange} value={value} placeholder="Search..."/>
         </SearchWrapper>
     )
 };

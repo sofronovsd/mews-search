@@ -1,6 +1,8 @@
-export type Action = {type: string, payload: string[]}
+import {IMovie} from "./services/MovieService";
 
-export const addMovies = (movies:string[]):Action => ({
+export type Action = {type: string, payload: IMovie[]}
+
+export const addMovies = (movies:IMovie[]):Action => ({
     type: "ADD_MOVIES",
     payload: movies
 });

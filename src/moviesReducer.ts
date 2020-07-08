@@ -1,7 +1,8 @@
 import {Action} from "./actions";
+import {IMovie} from "./services/MovieService";
 
 export interface MoviesState {
-    movies: string[]
+    movies: IMovie[]
 }
 
 const initialState = {
