@@ -20,7 +20,6 @@ const SearchPage: React.FC = () => {
         dispatch(removeMovies());
         searchMovies(searchString)
             .then((newMovies) => {
-                console.log(newMovies);
                 dispatch(addMovies(newMovies));
             })
             .then(() => setLoading(false))
