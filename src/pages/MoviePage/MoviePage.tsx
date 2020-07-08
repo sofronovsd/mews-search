@@ -2,6 +2,7 @@ import React from "react";
 import Wrapper from "../../components/Wrapper";
 import useMovieDetails from "./useMovieDetails";
 import {IMovie} from "../../services/MovieService";
+import MovieDetails from "../../components/MovieDetails";
 
 interface IMoviePage {
     match: {
@@ -17,12 +18,13 @@ const MoviePage: React.FC<IMoviePage> = (props) => {
 
     return (
         <Wrapper>
-            <section>
+            <MovieDetails>
                 <h1>{movie.title}</h1>
+                <img width={300} height={450} src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2/${movie.poster_path}`} alt="poster" />
                 <p>{movie.overview}</p>
-                <p>{movie.release_date}</p>
-                <p>{movie.vote_average}</p>
-            </section>
+                <p>{`Release date: ${movie.release_date}`}</p>
+                <p>{`Vote average: ${movie.vote_average}`}</p>
+            </MovieDetails>
         </Wrapper>
     )
 };

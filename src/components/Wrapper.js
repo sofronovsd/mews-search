@@ -7,6 +7,10 @@ const Wrapper = styled.div`
     padding: 2rem 4rem;
     display: flex;
     flex-direction: column;
+    
+    @media (max-width: 1024px) {
+        width: 90%
+    }
 `;
 
 export default Wrapper;

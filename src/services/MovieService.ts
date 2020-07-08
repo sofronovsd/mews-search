@@ -4,6 +4,7 @@ export interface IMovie {
     release_date: string,
     vote_average: number,
     overview: string,
+    poster_path?: string
 }
 
 export function searchMovies(searchString: string) {

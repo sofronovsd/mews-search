@@ -7,9 +7,14 @@ const MovieItem: React.FC<IMovie> = (movie) => {
     return (
         <Link to={`/movie/details/${movie.id}`} target="_blank">
             <MovieRow>
-                <span>{movie.title}</span>
-                <span>{movie.release_date}</span>
-                <span>{movie.vote_average}</span>
+                    <img className="poster" src={`https://image.tmdb.org/t/p/w94_and_h141_bestv2/${movie.poster_path}`} alt="poster" />
+                    <div style={{padding: "0 1rem"}}>
+                        <h4 style={{margin: "0.5rem 0"}}>{movie.title}</h4>
+                        <span>{`Release - ${movie.release_date}`}</span>
+                        <div style={{width: "100%", height: "50px"}}>
+                        <p className="hidden-text">{movie.overview}</p>
+                        </div>
+                    </div>
             </MovieRow>
         </Link>
     )

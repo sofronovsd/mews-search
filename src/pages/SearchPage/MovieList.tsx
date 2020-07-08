@@ -13,6 +13,7 @@ const MovieList: React.FC<MoviesState> = ( {movies}) => {
                         release_date={movie.release_date}
                         vote_average={movie.vote_average}
                         overview={movie.overview}
+                        poster_path={movie.poster_path}
                     />
                 </li>)
             }
